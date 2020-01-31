@@ -1,0 +1,33 @@
+//
+// Layout
+//
+$content-max-width: 1140px !default;
+$gutter: 1.25rem;
+
+// Breakpoint
+$breakpoints: (
+	'xs': 0,
+	'sm': 576px,
+	'md': 768px,
+	'lg': 992px,
+	'xl': 1200px
+) !default;
+
+//
+// Fonts
+//
+$base-font: 'Source Sans Pro', sans-serif !default;
+$headline-font: 'Oswald', sans-serif !default;
+
+//
+// Colors
+//
+$dark: #1E1F1E !default;
+$light: #EDEEF1 !default;
+
+// Set Bootstrap variables
+// Incorporated libraries
+@use "inc/bootstrap/bootstrap-reboot.scss" with(
+	$gray-100: maroon,
+	$enable-responsive-font-sizes: true,
+);

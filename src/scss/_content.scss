@@ -1,0 +1,9 @@
+//
+// Basic content styling
+//
+@use 'variables' as *;
+
+.entry-content > div {
+	max-width: $content-max-width;
+	margin: $gutter auto;
+}
