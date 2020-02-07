@@ -1,0 +1,16 @@
+//
+// Header
+//
+@use '../variables' as *;
+@use '../inc/bootstrap' as bs;
+@use '../mixins' as mixin;
+
+.site-header {
+	background: bs.$gray-100;
+	margin: $page-gutter auto;
+	max-width: $page-max-width;
+	@include mixin.apply-page-gutters() {
+		padding: 0 $page-gutter;
+	}
+}
+

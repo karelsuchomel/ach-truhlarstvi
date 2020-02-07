@@ -1,10 +1,14 @@
+// Incorporated libraries
+@use "inc/bootstrap" with(
+	$enable-responsive-font-sizes: true,
+);
+
 // Variables, mixins, functions
-@use "variables" as *;
-@use "mixins/breakpoints";
+@use "mixins";
 
 // Styling
 @use "type";
 @use "skip-to-content-link";
-@use "header";
+@use "header/header";
 @use "content";
 @use "footer";

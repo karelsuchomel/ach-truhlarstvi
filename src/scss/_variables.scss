@@ -1,33 +1,36 @@
-//
 // Layout
-//
-$content-max-width: 1140px !default;
-$gutter: 1.25rem;
+$page-max-width: 1400px;
 
-// Breakpoint
-$breakpoints: (
-	'xs': 0,
-	'sm': 576px,
-	'md': 768px,
-	'lg': 992px,
-	'xl': 1200px
+// Page gutter
+$page-gutter: 4.5rem;
+$page-gutters: (
+  "xs": 1.25rem,
+  "sm": 2.5rem,
+  "md": 3.5rem,
+  "lg": 4.5rem,
+  "xl": 4.5rem
 ) !default;
 
-//
+// Header
+$header-height: 5rem;
+$header-heights: () !default;
+$header-heights: map-merge(
+	(
+		"xs": $header-height,
+		"sm": $header-height,
+		"md": $header-height,
+		"lg": $header-height,
+		"xl": $header-height
+	),
+	$header-heights
+);
+
 // Fonts
-//
 $base-font: 'Source Sans Pro', sans-serif !default;
 $headline-font: 'Oswald', sans-serif !default;
 
-//
 // Colors
-//
 $dark: #1E1F1E !default;
 $light: #EDEEF1 !default;
 
-// Set Bootstrap variables
-// Incorporated libraries
-@use "inc/bootstrap/bootstrap-reboot.scss" with(
-	$gray-100: maroon,
-	$enable-responsive-font-sizes: true,
-);
+$anim-duration: 0.3s !default;
