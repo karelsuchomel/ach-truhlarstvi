@@ -1,16 +1,61 @@
-//
-// Header
-//
-@use '../variables' as *;
+@use '../variables' as v;
 @use '../inc/bootstrap' as bs;
 @use '../mixins' as mixin;
 
 .site-header {
-	background: bs.$gray-100;
-	margin: $page-gutter auto;
-	max-width: $page-max-width;
+	display: flex;
+	align-items: center;
+
+	margin: 0 auto;
+	max-width: v.$page-max-width;
+	box-sizing: content-box;
+	padding-top: 1.5rem;
+	padding-bottom: 1.5rem;
 	@include mixin.apply-page-gutters() {
-		padding: 0 $page-gutter;
+		padding-right: v.$page-gutter;
+		padding-left: v.$page-gutter;
 	}
 }
 
+// Logo
+#logo {
+	// For IE, SVG dimensions have to be defined
+	// so the correct rendering is not affected
+	height: 4.75rem;
+	width: 7.625rem;
+	flex-grow: 0;
+	flex-shrink: 1;
+}
+
+// For screen readers and crawlers
+.site-title, .site-description {
+	font-size: 0;
+	margin: 0;
+}
+
+#site-navigation,
+#language-selector-ccontainer {
+	padding-top: 1rem;
+}
+
+#site-navigation {
+	flex-grow: 1;
+
+	ul#primary-menu {
+		display: flex;
+		justify-content: space-evenly;
+
+		list-style: none;
+		padding: 0;
+		margin: 0;
+
+		.menu-item {
+			a {
+				font-size: 1.125rem;
+				font-weight: 600;
+				padding: 0.5rem 1rem;
+				color: inherit;
+			}
+		}
+	}
+}

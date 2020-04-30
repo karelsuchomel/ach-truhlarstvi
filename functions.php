@@ -27,7 +27,7 @@ function ach_theme_setup()
 {
 	// navigation menus
 	register_nav_menus(array(
-		'menu-top-bar' => __('Hlavička'),
+		'primary-menu' => __('Header navigation'),
 	));
 }
 add_action('after_setup_theme', 'ach_theme_setup');

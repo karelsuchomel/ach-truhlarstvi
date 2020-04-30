@@ -26,15 +26,14 @@
 
 	<header id="masthead" class="site-header">
 		<div class="site-branding">
+			<div id="logo">
+				<?php require_once('template-parts/header-logo.php');?>
+			</div>
 			<?php
-			the_custom_logo();
+			// the_custom_logo();
 			if ( is_front_page() && is_home() ) :
 				?>
 				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<?php
-			else :
-				?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
 				<?php
 			endif;
 			$ach_description = get_bloginfo( 'description', 'display' );
@@ -45,14 +44,21 @@
 		</div><!-- .site-branding -->
 
 		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'ach' ); ?></button>
+			<div id="primary-navigation-toggle" aria-label="Toggle primary navigation" tabindex="0">
+				<div class="icon-helper"></div>
+				<div class="icon-helper"></div>
+				<div class="icon-helper"></div>
+			</div>
 			<?php
 			wp_nav_menu( array(
-				'theme_location' => 'menu-1',
+				'theme_location' => 'primary-menu',
 				'menu_id'        => 'primary-menu',
 			) );
 			?>
 		</nav><!-- #site-navigation -->
+		<div id="language-selector-ccontainer">
+			<a href="">English</a>
+		</div>
 	</header><!-- #masthead -->
 
 	<div id="content" class="site-content">

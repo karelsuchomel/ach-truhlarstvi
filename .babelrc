@@ -1,0 +1,15 @@
+{
+	"comments": false,
+	"presets": [
+		["@babel/preset-env", {
+			"targets": {
+				"chrome": "58",
+				"ie": "11"
+			}
+		}],
+		[ "@babel/preset-react", {
+			"pragma": "wp.element",
+			// "throwIfNamespace": false,
+		}]
+	]
+}

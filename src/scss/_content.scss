@@ -1,12 +1,10 @@
-//
-// Basic content styling
-//
 @use 'variables' as *;
 @use 'mixins' as mixin;
 
 #content > div {
 	max-width: $page-max-width;
-	margin: $page-gutter auto;
+	box-sizing: content-box;
+	margin: 0 auto;
 	@include mixin.apply-page-gutters() {
 		padding: 0 $page-gutter;
 	}

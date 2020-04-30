@@ -1,14 +1,8 @@
-@use "variables" as *;
-
-body {
-	font-family: $base-font;
-	font-size: 18px;
-}
+@use "variables" as v;
 
 h1, h2, h3, h4, h5, h6 {
-	font-family: $headline-font;
-	font-weight: 400;
-	line-height: 1.5;
+	font-family: v.$headline-font;
+	font-weight: 700;
 }
 
 p, span {

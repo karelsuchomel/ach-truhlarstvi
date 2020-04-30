@@ -1,6 +1,8 @@
 // Incorporated libraries
 @use "inc/bootstrap" with(
 	$enable-responsive-font-sizes: true,
+	$font-family-base: #{'Source Sans Pro', sans-serif},
+	$headings-font-family: #{'Jaldi', sans-serif},
 );
 
 // Variables, mixins, functions
@@ -9,6 +11,14 @@
 // Styling
 @use "type";
 @use "skip-to-content-link";
-@use "header/header";
 @use "content";
 @use "footer";
+
+
+@use "header/header";
+@use "header/hamburger-icon";
+@use "header/mobile-navigation";
+@use "header/language-selector";
+
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Jaldi:700|Source+Sans+Pro:400,600&display=swap&subset=latin-ext');
