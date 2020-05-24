@@ -29,11 +29,15 @@ $to-mobile-navigation-breakpoint-down: 'sm';
 
 // Fonts
 $headline-font: 'Jaldi', sans-serif;
+$base-font: 'Source Sans Pro', sans-serif;
 
 // Colors
 $dark: #1E1F1E !default;
-$light: #EDEEF1 !default;
+$light: #edebeb !default;
 $gray: #DDD !default;
-$text-gray: #554b4b;
+$base-text-color: #554b4b;
+$dark-text-color: #403838;
 
-$animation-duration: 0.3s !default;
+$animation-duration: 0.2s !default;
+
+$theme-location: '../wp-content/themes/ach-truhlarstvi/';

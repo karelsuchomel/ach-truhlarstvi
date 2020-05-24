@@ -14,7 +14,7 @@ var config = {
 	localRoot: __dirname + '/../',
 	remoteRoot: '/wp-content/themes/ach-truhlarstvi/',
 	// include: ['*', '**/*'],				// this would upload everything except dot files
-	include: ['*.php', 'screenshot.png', 'style.css',  'build/**/*', 'template-parts/**/*', 'inc/**/*'],
+	include: ['*.php', 'screenshot.png', 'style.css',  'build/**/*', 'template-parts/**/*', 'inc/**/*', 'fonts/**/*', 'img/**/*'],
 	exclude: [],							// e.g. exclude sourcemaps - ** exclude: [] if nothing to exclude **
 	deleteRemote: true,						// delete ALL existing files at destination before uploading, if true
 	forcePasv: true							// Passive mode is forced (EPSV command is not sent)

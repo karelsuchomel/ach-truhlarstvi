@@ -1,24 +1,40 @@
 import resolve from 'rollup-plugin-node-resolve';
 import commonjs from 'rollup-plugin-commonjs';
 import babel from 'rollup-plugin-babel';
-// import { uglify } from 'rollup-plugin-uglify';
+import { uglify } from 'rollup-plugin-uglify';
 
 export default [
 	// browser-friendly IIFE build
 	{
-		input: 'src/js/guten-blocks.js',
+		input: 'js/editorBlocks/hero-card.js',
 		output: {
-			name: "gutenbergBlocks",
-			file: "build/js/guten-blocks.js",
+			name: "gutenbergBlockHeroCard",
+			file: "build/js/hero-card.js",
 			format: 'iife'
 		},
 		plugins: [
 			resolve(), // so Rollup can find `ms`
-			commonjs(), // so Rollup can convert `ms` to an ES module
 			babel({
 				exclude: ['node_modules/**']
 			}),
-			// uglify(),
+			commonjs(), // so Rollup can convert `ms` to an ES module
+			uglify(),
 		]
-	}
+	},
+	{
+		input: 'js/editorBlocks/product-showcase.js',
+		output: {
+			name: "gutenbergBlocksProductShowcase",
+			file: "build/js/product-showcase.js",
+			format: 'iife'
+		},
+		plugins: [
+			resolve(), // so Rollup can find `ms`
+			babel({
+				exclude: ['node_modules/**']
+			}),
+			commonjs(), // so Rollup can convert `ms` to an ES module
+			uglify(),
+		]
+	},
 ];

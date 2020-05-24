@@ -8,8 +8,8 @@
 			}
 		}],
 		[ "@babel/preset-react", {
-			"pragma": "wp.element",
+			"pragma": "wp.element.createElement",
 			// "throwIfNamespace": false,
-		}]
+		}],
 	]
 }

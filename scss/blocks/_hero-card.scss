@@ -1,0 +1,122 @@
+@use "../inc/bootstrap" as bs;
+@use '../variables' as vars;
+@use '../buttons' as btn;
+
+.wp-block-ach-hero-card {
+	position: relative;
+	display: flex;
+	align-items: flex-end;
+	justify-content: flex-end;
+	height: 25rem;
+	margin-top: 4rem;
+	margin-bottom: 6rem;
+	@include bs.media-breakpoint-down('md') {
+		margin-top: 3rem;
+		margin-bottom: 3rem;
+	}
+
+	.image-wrapper {
+		position: relative;
+		width: 60%;
+		flex-shrink: 0;
+		height: 100%;
+		background: #DDD;
+		border-radius: 0.25rem;
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		button {
+
+			&.image-button {
+				padding: 0;
+				height: 100%;
+				width: 100%;
+			}
+
+			&:hover {
+				img {
+					filter: brightness(0.75);
+				}
+			}
+		}
+
+		img {
+			display: block;
+			width: 100%;
+			transition: filter 0.3s;
+			border-radius: 0.25rem;
+
+			@supports (object-fit: cover) {
+				object-fit: cover;
+				height: 100%;
+				width: 100%;
+			}
+		}
+	}
+
+	.text-card {
+		position: relative;
+		width: 55%;
+		margin-left: -15%;
+		margin-bottom: -3rem;
+		padding: 4rem 0 4rem 3.5rem;
+
+		&::before {
+			content: '';
+			background: white;
+			border-radius: 0.75rem;
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			transform: rotate(-4deg);
+		}
+
+		// Remove additional spacing
+		[data-block] {
+			margin-top: 0;
+			margin-bottom: 0;
+		}
+
+		.text-wrapper {
+			position: relative;
+
+			h1 {
+				font-weight: normal;
+				margin-top: 0;
+				margin-bottom: 0.625em;
+				line-height: 1.125;
+
+			}
+
+			p {
+				@include bs.font-size(1.375rem);
+			}
+
+			.wp-block-button__link a {
+				color: vars.$base-text-color;
+				text-decoration: none;
+			}
+			div > a {
+				@include btn.button-styling();
+			}
+		}
+
+		&::after {
+			content: '';
+			position: absolute;
+			bottom: -2rem;
+			right: 45%;
+			width: 2.5rem;
+			height: 8rem;
+			background-image: url('../../img/drawn-arrow-down.svg');
+			background-size: 2.5rem 8rem;
+			background-position: center center;
+			background-repeat: no-repeat;
+		}
+	}
+
+}

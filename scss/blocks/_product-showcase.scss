@@ -1,0 +1,105 @@
+@use '../inc/bootstrap' as bs;
+
+.wp-block-ach-product-showcase {
+	[data-block] {
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+
+	.gallery-wrapper {
+
+	}
+
+	.wp-block-gallery {
+		margin: 0;
+	}
+
+	$gallery-gap: 1.125rem;
+
+	.blocks-gallery-grid {
+		display: flex;
+		flex-wrap: nowrap;
+		width: calc(100% + $gallery-gap);
+		margin-left: -#{$gallery-gap/2};
+		margin-right: -#{$gallery-gap/2};
+		@include bs.list-unstyled();
+
+		.blocks-gallery-item {
+			width: auto;
+			display: block;
+			width: 100%;
+			height: auto;
+			margin: 0 #{$gallery-gap/2} !important;
+
+		}
+
+		figure {
+			display: block;
+			margin: 0;
+
+			> a {
+				display: block;
+			}
+		}
+
+		img {
+			width: 100%;
+			height: auto;
+			border-radius: 0.25rem;
+			display: block;
+
+			@supports (object-fit: cover) {
+				height: 100%;
+				object-fit: cover;
+			}
+		}
+	}
+
+	.text-card {
+		position: relative;
+		padding: 1.375rem 2rem;
+		margin-left: 2rem;
+		margin-top: -3.75rem;
+		width: 15.5rem;
+		border-radius: 0.375rem;
+		box-shadow: 0 0.375rem 1rem rgba(0,0,0,0.25);
+
+		background: white;
+
+		h3 {
+			margin-top: 0;
+			margin-bottom: 0.375em;
+			line-height: 1.25;
+		}
+
+		.construction-time,
+		.materials-used {
+			display: flex;
+			align-items: center;
+
+			&::before {
+				content: '';
+				display: block;
+				width: 1.125rem;
+				height: 1.125rem;
+				margin-right: 0.75rem;
+				background-size: 1.125rem 1.125rem;
+				background-position: center center;
+				background-repeat: no-repeat;
+			}
+		}
+
+		.construction-time {
+			margin-bottom: 0.125rem;
+			&::before {
+				background-image: url('../../img/icon-clock.svg');
+			}
+		}
+
+		.materials-used {
+			&::before {
+				background-image: url('../../img/icon-material.svg');
+			}
+		}
+	}
+}

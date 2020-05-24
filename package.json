@@ -8,10 +8,11 @@
 	"dependencies": {
 		"autoprefixer": "^9.7.3",
 		"bootstrap-scss": "^4.4.1",
+		"focus-visible": "^5.0.2",
 		"ftp-deploy": "^2.3.3",
+		"photoswipe": "^4.1.3",
 		"postcss-cli": "^6.1.3",
-		"promise-ftp-common": "^1.1.5",
-		"focus-visible": "^5.0.2"
+		"promise-ftp-common": "^1.1.5"
 	},
 	"devDependencies": {
 		"@babel/core": "^7.2.2",
@@ -24,11 +25,10 @@
 		"rollup-plugin-uglify": "^6.0.4"
 	},
 	"scripts": {
-		"scss": "dart ~/dart-sass/bin/sass.dart --watch --style expanded src/scss/index.scss:build/css/bundle.css",
+		"sass": "dart ~/dart-sass/bin/sass.dart --watch --style expanded scss/index.scss:build/css/bundle.css scss/admin.scss:build/css/admin.css scss/blocks.scss:build/css/blocks.css",
+		"rollup": "rollup -c -w",
 		"autoprefixer": "postcss build/css/bundle.css -u autoprefixer --autoprefixer.browsers '&gt; 5%, ie 11' -o build/css/bundle.css --watch",
-		"start": "yarn run scss && yarn run autoprefixer",
-		"deploy": "node scripts/deploy.js",
-		"dev": "rollup -c -w"
+		"deploy": "node scripts/deploy.js"
 	},
 	"resolutions": {
 		"@babel/preset-env": "7.5.5"
