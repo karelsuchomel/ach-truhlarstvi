@@ -17,7 +17,7 @@ function ach_resources ()
 
 	wp_enqueue_style( 'ach-style', get_template_directory_uri() . '/build/css/bundle.css', array(), ACH_VERSION );
 
-	// wp_enqueue_script( 'ach-javascript', get_template_directory_uri() . '/build/js/bundle.js', array(), ACH_VERSION, true );
+	wp_enqueue_script( 'ach-javascript', get_template_directory_uri() . '/build/js/bundle.js', array(), ACH_VERSION, true );
 
 }
 add_action('wp_enqueue_scripts', 'ach_resources');

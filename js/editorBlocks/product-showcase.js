@@ -33,7 +33,11 @@ wp.blocks.registerBlockType( 'ach/product-showcase', {
 		};
 
 		const PRODUCT_GALLERY_TEMPLATE = [
-			[ 'core/gallery', {} ],
+			[ 'core/gallery', {
+				imageCrop: false,
+				columns: 1,
+				linkTo: 'media',
+			} ],
 		]
 
 		return (

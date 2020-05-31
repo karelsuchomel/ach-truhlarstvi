@@ -6,6 +6,22 @@ import { uglify } from 'rollup-plugin-uglify';
 export default [
 	// browser-friendly IIFE build
 	{
+		input: 'js/index.js',
+		output: {
+			name: "mainBundle",
+			file: "build/js/bundle.js",
+			format: 'iife'
+		},
+		plugins: [
+			resolve(), // so Rollup can find `ms`
+			babel({
+				exclude: ['node_modules/**']
+			}),
+			commonjs(), // so Rollup can convert `ms` to an ES module
+			// uglify(),
+		]
+	},
+	{
 		input: 'js/editorBlocks/hero-card.js',
 		output: {
 			name: "gutenbergBlockHeroCard",
