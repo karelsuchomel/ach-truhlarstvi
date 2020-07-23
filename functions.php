@@ -58,3 +58,6 @@ require get_template_directory() . '/inc/filter_admin_ui.php';
 require get_template_directory() . '/inc/custom-blocks/block-editor-scripts.php';
 // Custom template tags for this theme
 require get_template_directory() . '/inc/template-tags.php';
+// Custom post type
+// TODO implement this, so we could manage greather number of products
+// require get_template_directory() . '/inc/product-post-type.php';

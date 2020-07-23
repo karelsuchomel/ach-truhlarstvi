@@ -27,20 +27,10 @@
 	<header id="masthead" class="site-header">
 		<div class="site-branding">
 			<div id="logo">
-				<?php require_once('template-parts/header-logo.php');?>
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+					<?php require_once('template-parts/header-logo.php');?>
+				</a>
 			</div>
-			<?php
-			// the_custom_logo();
-			if ( is_front_page() && is_home() ) :
-				?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<?php
-			endif;
-			$ach_description = get_bloginfo( 'description', 'display' );
-			if ( $ach_description || is_customize_preview() ) :
-				?>
-				<p class="site-description"><?php echo $ach_description; /* WPCS: xss ok. */ ?></p>
-			<?php endif; ?>
 		</div><!-- .site-branding -->
 
 		<nav id="site-navigation" class="main-navigation">

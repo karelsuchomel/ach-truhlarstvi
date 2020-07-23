@@ -30,6 +30,8 @@
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 
+<?php require_once('template-parts/photoswipe-gallery.php');?>
+
 <?php wp_footer(); ?>
 
 </body>
