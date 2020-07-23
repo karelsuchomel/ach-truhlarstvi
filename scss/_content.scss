@@ -1,6 +1,10 @@
 @use 'variables' as *;
 @use 'mixins' as mixin;
 
+body {
+	margin: 0;
+}
+
 #content > div {
 	max-width: $page-max-width;
 	box-sizing: content-box;

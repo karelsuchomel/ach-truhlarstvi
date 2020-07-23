@@ -116,7 +116,72 @@
 			background-size: 2.5rem 8rem;
 			background-position: center center;
 			background-repeat: no-repeat;
+
+			@include bs.media-breakpoint-down('lg') {
+				right: 25%;
+			}
+
+			@include bs.media-breakpoint-down('md') {
+				bottom: 0;
+				right: 25%;
+				width: 2rem;
+				height: 6rem;
+				background-size: 2rem 6rem;
+			}
+
+			@include bs.media-breakpoint-down('sm') {
+				bottom: -1.5rem;
+				right: 40%;
+			}
+
+			@include bs.media-breakpoint-down('xs') {
+				right: 25%;
+				height: 5rem;
+				background-size: 2rem 5rem;
+			}
+
+			@media screen and (max-width: 360px) {
+				right: 18%;
+			}
 		}
+	}
+
+	// Mobile layout
+	@include bs.media-breakpoint-down('sm') {
+		flex-wrap: wrap;
+		height: auto;
+
+		.image-wrapper {
+			width: 100%;
+		}
+
+		.text-card {
+			width: 100%;
+			margin-left: 0;
+			margin-bottom: -1rem;
+			margin-top: -2rem;
+			padding: 2rem 3rem;
+	
+			&::before {
+				border-radius: 0.75rem;
+				transform: rotate(4deg);
+			}
+		}
+
+	}
+
+	@include bs.media-breakpoint-down('xs') {
+		.text-card {
+			margin-bottom: 0;
+			margin-top: -1rem;
+			padding: 0.875rem 0;
+	
+			&::before {
+				border-radius: 0;
+				transform: scale(1.1) rotate(4deg);
+			}
+		}
+
 	}
 
 }
