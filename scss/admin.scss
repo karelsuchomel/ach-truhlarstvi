@@ -1,12 +1,10 @@
 @use "type";
 @use "buttons";
-// Guttemberg editor styling
 @use "variables" as vars;
 
 // Main column width
 .wp-block {
     max-width: vars.$page-max-width;
-    // box-sizing: content-box;
 }
 
 // How link url field is rendered

@@ -22,7 +22,7 @@
 			transform: scale(1);
 			opacity: 1;
 			transform-origin: center center;
-			transition-property: transform opacity;
+			transition-property: transform, opacity;
 			transition-duration: vars.$animation-duration;
 			cursor: pointer;
 
@@ -112,7 +112,6 @@
 		.blocks-gallery-item {
 			width: auto;
 			display: block;
-			width: auto;
 			flex-grow: 0;
 			height: auto;
 			margin: 0 #{$gallery-gap/2};
@@ -143,10 +142,11 @@
 				right: 0;
 				bottom: 0;
 				left: 0;
-				background: black;
+				background: #000000;
 				opacity: 0;
 				pointer-events: none;
 				transition: opacity vars.$animation-duration;
+				border-radius: 0.25rem;
 			}
 
 			&:hover {
@@ -169,10 +169,12 @@
 
 	.text-card {
 		position: relative;
+		display: inline-block;
 		padding: 1.375rem 2rem;
 		margin-left: 2rem;
 		margin-top: -4rem;
-		width: 15.5rem;
+		min-width: 15.5rem;
+		max-width: 30rem;
 		border-radius: 0.375rem;
 		box-shadow: 0 -0.375rem 1.5rem rgba(0, 0, 0, 0.25);;
 
@@ -204,6 +206,7 @@
 
 		.construction-time {
 			margin-bottom: 0.125rem;
+
 			&::before {
 				background-image: url('../../img/icon-clock.svg');
 			}
@@ -240,8 +243,11 @@
 	}
 
 	@include bs.media-breakpoint-down('md') {
+		margin-top: 2rem;
+		margin-bottom: 2rem;
+
 		.blocks-gallery-grid .blocks-gallery-item img {
-			height: 15rem;
+			height: 18rem;
 		}
 
 		.text-card {
@@ -251,18 +257,53 @@
 	}
 
 	@include bs.media-breakpoint-down('sm') {
-		margin-top: 2rem;
-		margin-bottom: 2rem;
 
-		.blocks-gallery-grid .blocks-gallery-item img {
-			height: 13.5rem;
+		.gallery-wrapper .gallery-arrow {
+			width: 1.5rem;
+
+			&::before {
+				width: 1.5rem;
+				height: 1.5rem;
+			}
+
+			&.right {
+				right: -0.75rem;
+				&:hover, &:active {
+					&::before {
+						right: 0;
+					}
+				}
+			}
+
+			&.left {
+				left: -0.75rem;
+				&:hover, &:active {
+					&::before {
+						left: 0;
+					}
+				}
+			}
+		}
+
+		.blocks-gallery-grid .blocks-gallery-item {
+			margin: 0 #{$gallery-gap/4};
+			
+			img {
+				height: 13.5rem;
+			}
 		}
 
 		.text-card {
 			margin-left: 0.75rem;
 			padding: 1rem 1.5rem;
-			margin-top: -3.5rem;
+			margin-top: -2rem;
 			width: 13.5rem;
+
+			.construction-time,
+			.materials-used {
+				font-size: 0.875rem;
+			}
 		}
+
 	}
 }

@@ -123,3 +123,5 @@ const initShowcaseGalleryArrows = () => {
 }
 
 imagesLoaded('#content', initShowcaseGalleryArrows);
+
+const 

@@ -9,10 +9,10 @@
 	justify-content: flex-end;
 	height: 25rem;
 	margin-top: 4rem;
-	margin-bottom: 8rem;
+	margin-bottom: 6.5rem;
 	@include bs.media-breakpoint-down('md') {
 		margin-top: 3rem;
-		margin-bottom: 3rem;
+		margin-bottom: 4rem;
 	}
 
 	.image-wrapper {
@@ -89,17 +89,12 @@
 				margin-top: 0;
 				margin-bottom: 0.625em;
 				line-height: 1.125;
-
 			}
 
 			p {
 				@include bs.font-size(1.375rem);
 			}
-
-			.wp-block-button__link a {
-				color: vars.$base-text-color;
-				text-decoration: none;
-			}
+			
 			div > a {
 				@include btn.button-styling();
 			}
@@ -164,7 +159,7 @@
 	
 			&::before {
 				border-radius: 0.75rem;
-				transform: rotate(4deg);
+				transform: rotate(3deg) translateX(0.75rem);
 			}
 		}
 

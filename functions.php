@@ -34,21 +34,10 @@ function ach_theme_setup()
 	add_theme_support( 'disable-custom-colors' );
 	add_theme_support( 'disable-custom-gradients' );
 	add_theme_support( 'editor-styles' );
+	add_theme_support( 'wp-block-styles' );
 	add_editor_style( get_template_directory_uri() . '/build/css/admin.css' );
 }
 add_action('after_setup_theme', 'ach_theme_setup');
-
-// use post's front-end styles in TinyMCE text editor
-// function ach_theme_add_editor_styles() {
-// 	add_editor_style( 'build/css/bundle.css' );
-// }
-// add_action( 'admin_init', 'ach_theme_add_editor_styles' );
-
-// Deregister default guttemberg styling
-function wps_deregister_styles() {
-    wp_dequeue_style( 'wp-block-library' );
-}
-add_action( 'wp_print_styles', 'wps_deregister_styles', 100 );
 
 // remove WordPress emojis
 require get_template_directory() . '/inc/remove_wp_emoji.php';

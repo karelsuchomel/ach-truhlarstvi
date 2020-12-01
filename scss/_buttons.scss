@@ -13,10 +13,12 @@
 	text-decoration: none;
 
 	&:hover, &:active, &:focus {
+		color: vars.$base-text-color;
 		background-color: color.scale(vars.$light, $lightness: -10%);
 	}
 }
 
 .wp-block-button__link {
 	@include button-styling();
+	font-size: 1rem;
 }

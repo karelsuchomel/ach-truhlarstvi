@@ -9,7 +9,7 @@
 	$headings-font-family: #{vars.$headline-font, sans-serif},
 );
 @use "inc/photoswipe" with(
-	$pswp__background-color: #fff,
+$pswp__background-color: #fff,
 );
 
 // Variables, mixins, functions
@@ -29,6 +29,8 @@
 
 @use "blocks/hero-card";
 @use "blocks/product-showcase";
+
+@use "custom-classes/footer-product-listing";
 
 // Fonts
 @import url('https://fonts.googleapis.com/css?family=Jaldi:700|Source+Sans+Pro:400,600&display=swap&subset=latin-ext');
