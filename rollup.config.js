@@ -22,26 +22,10 @@ export default [
 		]
 	},
 	{
-		input: 'js/editorBlocks/hero-card.js',
+		input: 'js/editorBlocks/blocks.js',
 		output: {
-			name: "gutenbergBlockHeroCard",
-			file: "build/js/hero-card.js",
-			format: 'iife'
-		},
-		plugins: [
-			resolve(), // so Rollup can find `ms`
-			babel({
-				exclude: ['node_modules/**']
-			}),
-			commonjs(), // so Rollup can convert `ms` to an ES module
-			uglify(),
-		]
-	},
-	{
-		input: 'js/editorBlocks/product-showcase.js',
-		output: {
-			name: "gutenbergBlocksProductShowcase",
-			file: "build/js/product-showcase.js",
+			name: "gutenbergBlocks",
+			file: "build/js/blocks.js",
 			format: 'iife'
 		},
 		plugins: [

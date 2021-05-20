@@ -1,8 +1,120 @@
-@use '../variables' as v;
+@use '../variables' as vars;
 @use '../inc/bootstrap' as bs;
 
-@include bs.media-breakpoint-down(v.$to-mobile-navigation-breakpoint-down) {
+@include bs.media-breakpoint-down('lg') 
+{
+	.site-branding {
+		flex-grow: 1;
+	}
+	
+	.menu-header-navigation-container {
+		display: none;
+	}
+
 	#primary-navigation-toggle {
+		display: flex;	
+	}
+	#site-navigation {
+		margin-right: 1rem;
+		position: relative;
+		flex-grow: 0;
+		@include bs.media-breakpoint-down('sm') {
+			margin-right: 0.25rem;
+			position: static;
+		}
+	}
+	
+	@keyframes presentNemu {
+		from {
+			opacity: 0.85;
+			transform: scale(0.9);
+		}
+		to {
+			opacity: 1;
+			transform: scale(1);
+		}
+	}
+	
+	#site-navigation .menu-header-navigation-container.active {
+		display: block;
+		position: absolute;
+		min-width: 15rem;
+		top: 100%;
+		right: 0;
+		background: white;
+		padding: 0.75rem;
+		border-radius: 0.25rem;
+		box-shadow: 0.125rem 0.125rem 1.75rem 0 rgba(0, 0, 0, 0.2);
+
+		// Animation
+		transform-origin: top center;
+		animation-name: presentNemu;
+		animation-duration: 0.3s;
+		animation-fill-mode: forwards;
+
+		@include bs.media-breakpoint-down('sm') {
+			left: 0;
+			border-radius: 0 0 0.25rem 0.25rem;
+		}
+
+		#primary-menu {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+			display: flex;
+			flex-direction: column;
+
+			li {
+				margin: 0;
+				&.current_page_item a {
+					background-color: vars.$light;
+				}
+			}
+
+			a {
+				display: block;
+				padding: 0.875rem 1rem;
+				margin: 0.125rem 0;
+				background-color: white;
+				transition: background-color;
+				border-radius: 0.25rem;
+				font-weight: 600;
+
+				&:hover, &:active, &:focus {
+					background-color: vars.$light;
+				}
+			}
+		}
+	}
+
+	
+	#language-selector-container {
 		display: flex;
+		justify-content: flex-end;
+		
+		a {
+			display: inline-block;
+		}
+	}
+}
+
+@include bs.media-breakpoint-down('md') {
+	#dimm-background {
+		display: none;
+		position: fixed;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		background: rgba(255, 255, 255, 0.25);
+		z-index: 1;
+		opacity: 0;
+		transition: 0.4s;
+		
+		&.active {
+			display: block;
+			opacity: 1;
+		}
+		
 	}
 }

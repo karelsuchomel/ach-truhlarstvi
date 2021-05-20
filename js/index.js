@@ -1,4 +1,5 @@
 import imagesLoaded from 'imagesloaded';
+import './navigation';
 
 const initShowcaseGalleryArrows = () => {
 	
@@ -9,7 +10,6 @@ const initShowcaseGalleryArrows = () => {
 			constructor(containerEl) {
 				this.containerEl = containerEl;
 				this.galleryItems = this.containerEl.querySelectorAll('.blocks-gallery-item');
-				this.firstVisibleItem = this.galleryItems[0];
 
 				// Create Arrows
 				this.arrowRight = this.createGalleryArrow("right");
@@ -75,8 +75,6 @@ const initShowcaseGalleryArrows = () => {
 			}
 
 			getFirstItemPosition() {
-				let firstVisibleItem = this.containerEl.querySelector('.first-visible-item');
-
 				return positionFromLeft;
 			}
 
@@ -123,5 +121,3 @@ const initShowcaseGalleryArrows = () => {
 }
 
 imagesLoaded('#content', initShowcaseGalleryArrows);
-
-const 

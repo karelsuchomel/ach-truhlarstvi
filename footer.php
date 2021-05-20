@@ -10,7 +10,7 @@
  */
 
 ?>
-
+    <div id="dimm-background"></div>
 	</div><!-- #content -->
 </div><!-- #page -->
 

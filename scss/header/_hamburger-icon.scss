@@ -3,16 +3,15 @@
 $hamburger-icon-size: 2.5rem;
 
 #primary-navigation-toggle {
-	// But when visible, it is FLEX
-	display: none;
-
 	width: $hamburger-icon-size;
 	height: $hamburger-icon-size;
 	margin: 0.5rem;
+	border-radius: 0.25rem;
 	position: relative;
 	flex-wrap: wrap;
 	align-content: space-between;
 	padding: $hamburger-icon-size/3.5 $hamburger-icon-size/5;
+	cursor: pointer;
 
 	&:hover, &:focus {
 		background: v.$gray;

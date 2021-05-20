@@ -78,13 +78,10 @@
 		}
 	}
 
-	.wp-block-gallery {
-		margin: 0;
-	}
-
 	$gallery-gap: 1.125rem;
 
 	.wp-block-gallery {
+		margin: 0;
 		overflow-y: hidden;
 
 		// hide the scrollbar, keep the functionality
@@ -164,7 +161,11 @@
 				display: block;
 			}
 		}
-
+	}
+	
+	// Only for Editor
+	.block-editor-media-placeholder {
+		padding-bottom: 4rem;
 	}
 
 	.text-card {

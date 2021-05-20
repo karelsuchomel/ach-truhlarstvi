@@ -27,8 +27,7 @@ $pswp__background-color: #fff,
 @use "header/mobile-navigation";
 @use "header/language-selector";
 
-@use "blocks/hero-card";
-@use "blocks/product-showcase";
+@use "blocks";
 
 @use "custom-classes/footer-product-listing";
 

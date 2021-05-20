@@ -7,6 +7,10 @@
 @forward 'hamburger-icon';
 
 .site-header {
+	position: relative;
+	z-index: 2;
+	background: white;
+	
 	display: flex;
 	align-items: center;
 
@@ -18,6 +22,11 @@
 	@include mixin.apply-page-gutters() {
 		padding-right: v.$page-gutter;
 		padding-left: v.$page-gutter;
+	}
+	
+	@include bs.media-breakpoint-down('sm') {
+		padding-top: 0.5rem;
+		padding-bottom: 0.5rem;
 	}
 }
 
@@ -33,21 +42,40 @@
 	a {
 		display: block;
 	}
+	
+	@include bs.media-breakpoint-down('sm') {
+		height: 3.5rem;
+		width: 4rem;
+		
+		svg {
+			height: 3.5rem;
+			width: 4rem;
+		}
+	}
 }
 
 // For screen readers and crawlers
+
 .site-title, .site-description {
 	font-size: 0;
 	margin: 0;
 }
 
 #site-navigation,
-#language-selector-ccontainer {
-	padding-top: 1rem;
+#language-selector-container {
 
 	a {
 		display: block;
 		text-decoration: none;
 		color: inherit;
 	}
+	
+	@include bs.media-breakpoint-up('md') {
+		padding-top: 1rem;
+	}
+}
+
+// input toggle element
+#menu-toggle {
+	display: none;
 }

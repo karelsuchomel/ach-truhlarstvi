@@ -46,7 +46,7 @@
 			) );
 			?>
 		</nav><!-- #site-navigation -->
-		<div id="language-selector-ccontainer">
+		<div id="language-selector-container">
 			<a href="">English</a>
 		</div>
 	</header><!-- #masthead -->

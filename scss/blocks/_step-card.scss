@@ -2,37 +2,44 @@
 @use '../variables' as vars;
 @use '../buttons' as btn;
 
-.wp-block-ach-hero-card {
+.wp-block-ach-step-card {
 	position: relative;
 	display: flex;
 	align-items: flex-end;
 	justify-content: flex-end;
-	height: 25rem;
-	margin-top: 4rem;
-	margin-bottom: 8.5rem;
+	margin-top: 3rem;
+	margin-bottom: 3rem;
 	@include bs.media-breakpoint-down('md') {
-		margin-top: 3rem;
-		margin-bottom: 4rem;
+		margin-top: 2rem;
+		margin-bottom: 2rem;
 	}
 	@include bs.media-breakpoint-down('sm') {
-		margin-top: 0.25rem;
-		margin-bottom: 3.5rem;
+		margin-top: 1.25rem;
+		margin-bottom: 1.25rem;
 	}
 
 	.image-wrapper {
-		position: relative;
-		width: 60%;
-		flex-shrink: 0;
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		width: 100%;
 		height: 100%;
 		background: #DDD;
 		border-radius: 0.25rem;
 
 		display: flex;
 		align-items: center;
-		justify-content: center;
+		justify-content: flex-start;
 
+		// for editor
 		button {
-
+			
+			&:not(.image-button) {
+				margin-left: 10%;
+			}
+			
 			&.image-button {
 				padding: 0;
 				height: 100%;
@@ -62,11 +69,11 @@
 
 	.text-card {
 		position: relative;
-		width: 55%;
-		margin-left: -15%;
-		margin-bottom: -3rem;
-		padding: 4rem 0 4rem 3.5rem;
+		width: 50%;
+		margin: 20% 5% -4%;
+		padding: 3rem;
 
+		// Angled background
 		&::before {
 			content: '';
 			background: white;
@@ -76,7 +83,7 @@
 			right: 0;
 			bottom: 0;
 			left: 0;
-			transform: rotate(-4deg);
+			transform: rotate(3deg);
 		}
 
 		// Remove additional spacing
@@ -87,62 +94,56 @@
 
 		.text-wrapper {
 			position: relative;
-
-			h1 {
+			
+			p {
 				font-weight: normal;
 				margin-top: 0;
 				margin-bottom: 0.625em;
-				line-height: 1.125;
-			}
-
-			p {
-				@include bs.font-size(1.375rem);
-			}
-			
-			div > a {
-				@include btn.button-styling();
+				line-height: 1.5;
+				@include bs.font-size(1.5rem);
 			}
 		}
 
-		&::after {
-			content: '';
-			position: absolute;
-			bottom: -2rem;
-			right: 45%;
-			width: 2.5rem;
-			height: 8rem;
-			background-image: url('../../img/drawn-arrow-down.svg');
-			background-size: 2.5rem 8rem;
-			background-position: center center;
-			background-repeat: no-repeat;
-
-			@include bs.media-breakpoint-down('lg') {
-				right: 25%;
-			}
-
-			@include bs.media-breakpoint-down('md') {
-				bottom: 0;
-				right: 25%;
-				width: 2rem;
-				height: 6rem;
-				background-size: 2rem 6rem;
-			}
-
-			@include bs.media-breakpoint-down('sm') {
-				bottom: -1.5rem;
-				right: 40%;
-			}
-
-			@include bs.media-breakpoint-down('xs') {
-				right: 25%;
-				height: 5rem;
-				background-size: 2rem 5rem;
-			}
-
-			@media screen and (max-width: 360px) {
-				right: 18%;
-			}
-		}
+		// Arrow
+		//&::after {
+		//	content: '';
+		//	position: absolute;
+		//	bottom: -2rem;
+		//	right: 45%;
+		//	width: 2.5rem;
+		//	height: 8rem;
+		//	background-image: url('../../img/drawn-arrow-down.svg');
+		//	background-size: 2.5rem 8rem;
+		//	background-position: center center;
+		//	background-repeat: no-repeat;
+		//
+		//	@include bs.media-breakpoint-down('lg') {
+		//		right: 25%;
+		//	}
+		//
+		//	@include bs.media-breakpoint-down('md') {
+		//		bottom: 0;
+		//		right: 25%;
+		//		width: 2rem;
+		//		height: 6rem;
+		//		background-size: 2rem 6rem;
+		//	}
+		//
+		//	@include bs.media-breakpoint-down('sm') {
+		//		bottom: -1.5rem;
+		//		right: 40%;
+		//	}
+		//
+		//	@include bs.media-breakpoint-down('xs') {
+		//		right: 25%;
+		//		height: 5rem;
+		//		background-size: 2rem 5rem;
+		//	}
+		//
+		//	@media screen and (max-width: 360px) {
+		//		right: 18%;
+		//	}
+		//}
 	}
 
 	// Mobile layout
